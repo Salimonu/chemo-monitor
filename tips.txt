@@ -1,0 +1,11 @@
+#1
+**Database Normalization is fundamentally about:
+“Store one fact in one place only.”
+
+#2
+Quick rule to remember
+Field Type	                    Common Practice
+1. CharField, TextField	        blank=True only
+2. DateField, IntegerField,     blank=True, null=True if optional
+    ForeignKey	
+    

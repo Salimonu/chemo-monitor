@@ -1,0 +1,7 @@
+# class CancerType(models.TextChoices):
+#     BREAST_CANCER = 'breast_cancer', 'Breast Cancer'
+#     PROSTATE_CANCER = 'prostate_cancer', 'Prostate Cancer'
+#     RECTAL_CANCER = 'rectal_cancer', 'Rectal Cancer'
+#     COLON_CANCER = 'colon_cancer', 'Colon Cancer'
+#     LUNG_CANCER = 'lung_cancer', 'Lung Cancer'
+#     OTHER_CANCERS = 'other_cancers', 'Others'

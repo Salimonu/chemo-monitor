@@ -1,0 +1,79 @@
+#####################
+**Project Spec
+A SIMPLE software (MVP) with the following features:
+- users register with specified roles (admin can add users with roles)
+- patients upload their BioData & medical records
+- patients report their adverse events
+- clinicians get notifications
+- clinicians view clients' BioData & medical records
+- clinicians reply the patients via messaging (consultation)
+- clinicians make prescriptions
+- patients view prescriptions
+
+
+#####################
+**User story
+Features/user story/workflow
+1. Patient UPDATES profile/BioData
+2. Patient UPLOADS medical records: diagnosis, treatment, lab reports
+------------pay------------ 80/20
+3. Patient SUBMITS reports of AE
+4. Clinician GETS notification about the reports
+5. Clinician VIEWS patients BioData & medical records
+6. Clinician REPLIES patients via messaging (consultation)
+7. Clinician ORDERS PRESCRIPTIONS
+8. Patient VIEWS the prescriptions
+
+
+Real time features
+- Clinician schedules APPOINTMENT with the client
+- Send notifications to both patients and clinicians for appointment
+- Clinician counsels the client via chat/audio CONSULTATION
+
+
+######################
+**Benefits over WhatsApp
+- ePRO not chat app
+- remote healthcare
+- stores & displays medical records
+- useful for research purposes
+
+
+#####################
+old
+
+####################
+Chemo-monitor/ePRO
+
+A simple software that enables the
+- clients to report their adverse events,
+- clinicians get notifications
+- clinicians to view clients' medical records and
+- clinicians to give appropriate counselling via
+- messaging, chat or audio consultation.
+
+
+####################
+Features/user story/workflow
+
+1. Client UPDATES profile
+2. Client UPLOADS medical records: diagnosis, treatment, lab reports
+------------pay------------ 80/20
+80% for myself      20% for clinician
+
+3. Client SUBMITS reports of AE
+4. Clinician GETS notification about the reports
+5. Clinician SCHEDULES appointment with the client
+- send notifications to both patients and clinicians for appointment
+6. Clinician VIEWS patients medical records
+7. Clinician COUNSELS the client via message/chat/audio consultation
+8. Clinician orders PRESCRIPTIONS
+9. Client VIEWS the prescriptions.
+
+
+#####################
+Benefits over WhatsApp
+
+- ePRO not chat app
+- display medical records
+- useful for research

@@ -1,8 +1,37 @@
+##################
 Start date: Saturday, May 9th
-** Next
-- refactor all the choices to the core app
 
-**notes
+
+DAY 23
+##################
+superuser = ePROAdmin
+patient = patient1, pat12345
+clinician = clinician1, cli12345
+
+First priority: easy
+Second priority: usefulness
+
+Next:
+- core/base.html
+- core/signup.html
+- core/view.signup
+
+
+
+** Create a new app: dashboard
+- Display info based on user's role
+- patient: 
+    message (unread & read),
+    medications (unread & read)
+
+** We will gather reports in 2modes
+- patient-initiated reports
+(symptoms report)
+- clinician-initiated reports (questionnaire) ePRO CTCAE
+
+
+##################
+.env
 
 EMAIL_PORT=587
 EMAIL_PORT = env.int("EMAIL_PORT")
@@ -17,43 +46,11 @@ DATABASES = {
 }
 
 
-- add .env
-- add .env, virtual env to .gitignore
-**done
+#####################
+recommended apps
 
-**class Next
-
-1.  Divide PatientProfile models into separate models
-
-Do NOT overload PatientProfile.
-
-Your ePRO system should separate:
-
-patient demographics
-symptom reports
-sypmtoms
-symptom entry
-chemotherapy sessions
-appointments
-vitals
-lab results
-PRO questionnaires
-
-into separate models.
-
-This model should remain primarily:
-
-demographic
-baseline clinical profile
-
-That is good database normalization.
-
-Your model design is already strong for an oncology ePRO MVP. 
-The biggest future improvement is separating chemotherapy administration, symptom reporting, 
-and patient outcomes into dedicated models rather than expanding this one model too much.
-
-** recommended apps
 App	            Responsibility
+
 core            utils, 
 users	        Login, authentication, permissions
 patients	    Patient demographics/profile
@@ -65,7 +62,10 @@ telemedicine	Video consultations, audio, chat
 notifications	SMS/email/in-app alerts
 medical_records lab results, radiology reports
 
+
+####################
 **Model Type	            Recommended ID
+
 PatientProfile	            UUID
 ClinicianProfile	        UUID
 Appointment	                UUID
@@ -77,22 +77,29 @@ Lookup tables	            Integer
 Choice/reference models     Integer
 
 
-Thesis Topic = 
+#####################
+Proposed Thesis Topic
 
 "Effect of a Mobile-Based Symptom Monitoring System on 
 the Severity of Chemotherapy-Induced Side Effects and 
 Quality of Life Among Adult Patients Receiving Chemotherapy 
 in a Tertiary Hospital in Nigeria"
 
-## TO-DO 
+
+####################
+TO-DO 
 
 Add BMI/Weight Tracking Later
 
-ePRO systems often track:
-
-weight
-height
-BMI
-performance status
-
-Especially in oncology.
+####################
+class ChemotherapyRegimenChoices(models.TextChoices):
+    EC = 'EC', 'Epirubicin + Cyclophosphamide'
+    EC_T = 'EC_T', 'Epirubicin + Cyclophosphamide + Docetaxel'
+    CMF = 'CMF', 'Cyclophosphamide, + Methotrexate + 5-Fluorouracil (5-FU)'
+    FOLFOX = 'FOLFOX', '5-Fluorouracil (5-FU) + Leucovorin + Oxaliplatin'
+    FOLFIRI = 'FOLFIRI', '5-Fluorouracil (5-FU) + Leucovorin + Irinotecan'
+    CISGEM = 'CISGEM', 'Cisplatin + Gemcitabine'
+    CARBOPACLI = 'CARBOPACLI', 'Carboplatin + Paclitaxel'
+    ECF = 'ECF', 'Epirubicin + Cisplatin + 5-FU'
+    ECX = 'ECX', 'Epirubicin + Cisplatin + Capecitabine'
+    OTHERS = 'others', 'Others'
