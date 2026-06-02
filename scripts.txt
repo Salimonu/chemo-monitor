@@ -1,0 +1,6 @@
+###################
+tailwind CSS
+
+npx @tailwindcss/cli -i ./static/src/input.css -o ./static/css/output.css --watch
+
+"tailwinddev":  "npx @tailwindcss/cli -i ./static/src/input.css -o ./static/css/output.css --watch",

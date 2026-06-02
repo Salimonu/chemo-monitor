@@ -1,0 +1,32 @@
+{
+  "name": "chemo_monitor",
+  "version": "1.0.0",
+  "description": "electronic Patient Reported Outcome for cancer patients to report the chemotherapy adverse events immediately as they experience it. Patients get instant reply from the oncologists to prevent worsening of chemotherapy adverse events.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwinddev": "npx @tailwindcss/cli -i ./static/src/input.css -o ./static/css/output.css --watch",
+    "tailwindprod": "npx @tailwindcss/cli -i ./static/src/input.css -o ./static/css/output.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Salimonu/chemo-monitor.git"
+  },
+  "keywords": [
+    "chemotherapy",
+    "adverse events",
+    "patient",
+    "clinician"
+  ],
+  "author": "Salimonu",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Salimonu/chemo-monitor/issues"
+  },
+  "homepage": "https://github.com/Salimonu/chemo-monitor#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

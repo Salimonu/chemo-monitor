@@ -1,9 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .forms import SignUpForm
 
 
-def signup(request):
-    form = SignUpForm()
+def index(request):
+    return render(request, 'core/index.html')
 
-    return render(request, 'core/signup.html')
+
+def signup(request):
+    if request.method != 'POST':
+        form = SignUpForm()
+    else:
+        form = SignUpForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboards:index')
+
+    return render(request, 'core/signup.html', {'form': form})

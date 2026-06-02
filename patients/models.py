@@ -18,7 +18,7 @@ class Patient(models.Model):
     surname = models.CharField(max_length=50)
     first_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50, null=True, blank=True)
-    profile_picture = models.ImageField(upload_to='patient_profiles/', default='default/default-patient.jpg', null=True, blank=True)
+    profile_picture = models.ImageField(upload_to='patient_profiles/', default='images/default-patient.jpg', null=True, blank=True)
     phone_number = PhoneNumberField(unique=True)
     emergency_contact = PhoneNumberField(null=True, blank=True)
     home_address = models.TextField(null=True, blank=True)

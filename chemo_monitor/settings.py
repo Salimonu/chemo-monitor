@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     "phonenumber_field",
+    "django_browser_reload",
 
     # default apps.
     'django.contrib.admin',
@@ -66,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'chemo_monitor.urls'
@@ -138,8 +140,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
+# STATIC_ROOT = BASE_DIR / 'static'
+
+STATIC_URL = '/static/'
+
+# for development
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    # BASE_DIR / "vendor_static", you can add more project-level static directories
+]
+
+# for production
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -151,3 +163,10 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = "users.MyUser"
+
+LOGIN_REDIRECT_URL = "'dashboards:index'" 
+
+LOGIN_URL = "core:login" 
+
+LOGOUT_REDIRECT_URL = "core:index"
+

@@ -1,0 +1,26 @@
+{% extends "core/base.html" %} 
+
+{% block title %}Login{% endblock %} 
+
+{% block content %}
+
+
+<p class="p-10 text-4xl font-semibold">Welcome!</p>
+<h1 class="p-10 text-4xl font-semibold">Pls, log in</h1>
+
+{%if form.errors%}
+    <p class="text-3xl text-red-600">Your username and password didn't match. Please, try again.</p>
+{%endif%}
+
+<form action="{% url 'core:login' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    
+    <button name="submit">Log in<button>
+    <input type="hidden" name="next" value="{% url 'dashboards:index'%}" />
+</form>
+
+
+
+
+{% endblock %}

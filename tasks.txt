@@ -12,13 +12,17 @@ First priority: easy
 Second priority: usefulness
 
 Next:
-- core/base.html
-- core/signup.html
-- core/view.signup
+- Your biodata was updated ()days/months ago
+- show prompt: Pls, update your biodata; click here
+- Display a modal: Are you a patient? if Yes: show patientBiodataForm 
+- if No: Are you a clinician? if Yes: show: Pls, verify your account
+- after verification: show clinicianBiodataForm 
 
 
+Later:
+- Display Login/logout info on a modal
 
-** Create a new app: dashboard
+** dashboard
 - Display info based on user's role
 - patient: 
     message (unread & read),

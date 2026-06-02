@@ -1,0 +1,4 @@
+date    Start   stop    duration    cumulative
+02/06   12:20   1:20
+02/06   02:02   4:00
+02/06   04:30

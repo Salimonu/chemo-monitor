@@ -15,7 +15,7 @@ class Clinician(models.Model):
     surname = models.CharField(max_length=50)
     first_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50, blank=True)
-    profile_picture = models.ImageField(upload_to='clinician_profiles/', default='default/default-clinician.jpeg', null=True, blank=True)
+    profile_picture = models.ImageField(upload_to='clinician_profiles/', default='images/default-clinician.jpeg', null=True, blank=True)
     phone_number = PhoneNumberField(unique=True)
     email = models.EmailField(max_length=100, null=True, blank=True)
     gender = models.CharField(max_length=15, choices=GenderChoices.choices, default=GenderChoices.MALE)
