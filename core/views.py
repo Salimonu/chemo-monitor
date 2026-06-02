@@ -14,6 +14,6 @@ def signup(request):
         form = SignUpForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('dashboards:index')
+            return redirect('patients:biodata')
 
     return render(request, 'core/signup.html', {'form': form})

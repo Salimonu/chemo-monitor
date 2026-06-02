@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', include('core.urls')),
     path('dashboard/', include('dashboards.urls')),
+    path('patient/', include('patients.urls')),
     path('admin/', admin.site.urls),
     path('telemedicine/', include('telemedicine.urls') ),
      path("__reload__/", include("django_browser_reload.urls")),

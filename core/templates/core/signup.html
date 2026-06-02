@@ -7,11 +7,13 @@
 
 
 <h1 class="bg-purple-800 p-10 text-4xl text-white">Create a free account</h1>
-<form action="{% url 'core:signup' %}" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button name="submit">signup</button>
-</form>
+<div class="p-20 bg-gray-200">
+    <form action="{% url 'core:signup' %}" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button name="submit">signup</button>
+    </form>
+</div>
 
 
 

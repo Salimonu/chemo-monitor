@@ -1,0 +1,16 @@
+{% extends "core/base.html" %} 
+
+{% block title %}Fill biodata{% endblock %} 
+
+{% block content %}
+
+<h1 class="bg-purple-800 p-10 text-4xl text-white">Fill your biodata</h1>
+<div class="p-10 bg-gray-200">
+    <form action="{% url 'patients:biodata' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button name="submit">submit</button>
+    </form>
+</div>
+
+{% endblock %}

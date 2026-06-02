@@ -1,6 +1,11 @@
 from django.db import models
 
 
+class RoleChoices(models.TextChoices):
+        PATIENT = 'patient', 'Patient'
+        CLINICIAN = 'clinician', 'Clinician'
+
+
 class SeverityChoices(models.IntegerChoices):
     NONE = 0, "None"
     MILD = 1, "Mild"

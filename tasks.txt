@@ -12,6 +12,9 @@ First priority: easy
 Second priority: usefulness
 
 Next:
+- ChatGPT scenario 2
+- ChatGPT scenario 3
+
 - Your biodata was updated ()days/months ago
 - show prompt: Pls, update your biodata; click here
 - Display a modal: Are you a patient? if Yes: show patientBiodataForm 
