@@ -13,12 +13,13 @@ from core.models import GenderChoices, BloodGroupChoices, SeverityChoices, Aller
 class Patient(models.Model):    
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     hospital_id = models.CharField(max_length=20, unique=True)
-    patient = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='patientS')
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='patient')
     primary_consultant = models.ForeignKey(Clinician, on_delete=models.PROTECT, related_name='patients', null=True, blank=True)
     surname = models.CharField(max_length=50)
     first_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50, null=True, blank=True)
     profile_picture = models.ImageField(upload_to='patient_profiles/', default='images/default-patient.jpg', null=True, blank=True)
+    email = models.EmailField(max_length=100, null=True, blank=True)
     phone_number = PhoneNumberField(unique=True)
     emergency_contact = PhoneNumberField(null=True, blank=True)
     home_address = models.TextField(null=True, blank=True)
@@ -32,6 +33,7 @@ class Patient(models.Model):
     next_of_kin_relationship = models.CharField(max_length=50)
     blood_group = models.CharField(max_length=5, choices=BloodGroupChoices.choices, null=True, blank=True)
     is_active = models.BooleanField(default=True)
+    is_complete = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
        

@@ -1,5 +1,107 @@
 #####################
-**User story
+**User journey
+
+Scenario 1: Normal Patient
+Register account.
+Role defaults to patient.
+Complete Patient BioData.
+Access patient dashboard.
+
+Scenario 2: Clinician Invited/Assigned by Admin
+- clinician should register on the plaform like other users.
+- clinician will message admin with their details (username, email) 
+    to be assigned a clinician role on platform
+- Admin assigns clinician role.
+- On login, clinician fills biodata form
+- then, clinician is redirected to fill verification request form
+- Admin receives notification (signal) and reviews the clinician credentials
+- Admin verifies the clinician
+- Clinician receives verification notification (signal)
+- After verification, on login, clinician is redirected to dashboard
+
+
+On login:
+- User completes Clinician BioData.
+if user.role == "clinician" and not user.is_verified_clinician:
+Redirect to:
+Clinician Verification Page
+- Upload details
+- Admin reviews.
+- Admin approves.
+- Access clinician dashboard.
+
+
+
+(((((((((((((((
+
+Scenario 3: 
+
+User Initially Registers as Patient but Later Becomes Clinician
+
+This is the most important case.!!!!!!!!!!!!!!
+
+Suppose:
+
+User registers.
+Completes Patient BioData.
+Uses the system for months.
+Later becomes a clinician or was assigned the wrong role.
+
+Add a button:
+
+Request Clinician Verification
+
+Under:
+
+Profile Settings
+
+When clicked:
+
+verification_requested = True
+Show verification form.
+Admin receives notification.
+After approval:
+role = "clinician"
+is_verified_clinician = True
+
+    patient
+    ↓
+request verification
+    ↓
+verification_requested = True
+    ↓
+admin reviews credentials
+    ↓
+admin approves
+    ↓
+role = "clinician"
+is_verified_clinician = True
+
+if request.method == "POST":
+    user.verification_requested = True
+    user.save()
+
+    return redirect("clinicians:verification_review")
+
+user.role = "clinician"
+user.is_verified_clinician = True
+user.verification_requested = False
+user.save()
+
+This prevents a patient from gaining clinician privileges before verification is completed.
+
+One more question: In your system, can a clinician also remain a patient (for example, 
+a doctor receiving treatment), or should a user always have exactly one role? 
+That affects whether changing role is the best design or 
+whether a separate Clinician profile should be created after approval.
+
+)))))))))))))))
+
+User can now create Clinician BioData.
+
+The existing patient data remains intact.
+
+#############################
 
 1. user visits the website HOMEPAGE
 2. user SIGNS UP for a new account (default: patient) then redirected to dashboard

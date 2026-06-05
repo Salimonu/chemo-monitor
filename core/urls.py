@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.index, name='index' ),
     path('signup/', views.signup, name='signup' ),
     path('user/', include('django.contrib.auth.urls')),
+    path('user/redirect', views.login_redirect, name='login_redirect')
 ]

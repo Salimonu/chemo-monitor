@@ -164,8 +164,7 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = "users.MyUser"
 
-# LOGIN_REDIRECT_URL = "dashboards:index" 
-LOGIN_REDIRECT_URL = "patients:biodata" 
+LOGIN_REDIRECT_URL = "core:login_redirect" 
 
 LOGIN_URL = "core:login" 
 

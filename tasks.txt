@@ -12,6 +12,11 @@ First priority: easy
 Second priority: usefulness
 
 Next:
+- Patient-Clinician Flow (core.views.login_redirect)
+
+- Admin receives notification (signal) and reviews the clinician credentials
+- Clinician receives verification notification (signal)
+
 - ChatGPT scenario 2
 - ChatGPT scenario 3
 
@@ -23,6 +28,7 @@ Next:
 
 
 Later:
+- Add change password feature
 - Display Login/logout info on a modal
 
 ** dashboard
@@ -110,3 +116,4 @@ class ChemotherapyRegimenChoices(models.TextChoices):
     ECF = 'ECF', 'Epirubicin + Cisplatin + 5-FU'
     ECX = 'ECX', 'Epirubicin + Cisplatin + Capecitabine'
     OTHERS = 'others', 'Others'
+

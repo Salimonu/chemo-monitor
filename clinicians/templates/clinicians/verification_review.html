@@ -1,0 +1,17 @@
+{% extends "core/base.html" %} 
+
+{% block title %}Clinician verification{% endblock %} 
+
+{% block content %}
+
+<h1 class="bg-purple-800 p-4 text-3xl text-white">Clinician Verification Review</h1>
+<div class="p-6 bg-gray-200">
+    <p class="mb-4 text-2xl">Welcome {{request.user.username}}</p>
+    <p class="text-xl">
+        Your credentials have been successfully submitted for verification. </br>
+        You will be notified via your email <strong> ({{ request.user.email|default:"No email provided, pls, update your biodata with your valid email"}})</strong> when you are successfully verified. </br>
+        Thank you.
+    </p>
+</div>
+
+{% endblock %}

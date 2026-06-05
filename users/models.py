@@ -9,8 +9,8 @@ from core.models import RoleChoices
 class MyUser(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     role = models.CharField(max_length=20, choices=RoleChoices.choices, default='patient')
-    is_verified_clinician = models.BooleanField(default=False)
     verification_requested = models.BooleanField(default=False)
+    is_verified_clinician = models.BooleanField(default=False)
 
     def __str__(self):
         return self.username

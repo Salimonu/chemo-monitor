@@ -17,9 +17,9 @@ from .models import MyUser
 @admin.register(MyUser)
 class MyUserAdmin(UserAdmin):
     fieldsets = UserAdmin.fieldsets + (
-        ('Custom fields', {'fields': ('role',)}),
+        ('Custom fields', {'fields': ('role', 'verification_requested', 'is_verified_clinician')}),
     )
 
     add_fieldsets = UserAdmin.add_fieldsets + (
-        ('Custom fields', {'fields': ('role',)}),
+        ('Custom fields', {'fields': ('role', 'verification_requested', 'is_verified_clinician')}),
     )

@@ -1,0 +1,22 @@
+{% extends "core/base.html" %} 
+
+{% block title %}ePRO--Report Adverse Events{% endblock %} 
+
+{% block content %}
+
+
+
+<h1 class="bg-purple-800 p-4 text-4xl text-white">Homepage</h1>
+<p class="bg-amber-500 p-4 text-2xl text-center">You are registered as both patient and clinician</p>
+<div class="w-[30%] mx-auto mt-10 border-2 border-amber-400 p-6 rounded-xl">
+    <p class="text-2xl mb-6 text-center font-semibold text-amber-600">Select the dashboard you like to visit</p>
+    <div class="flex justify-between items-center gap-4 p-8">
+        <a href="{%url 'patients:dashboard'%}" class="bg-amber-400 p-4 rounded-xl text-xl">Patient</a>
+        <a href="{%url 'clinicians:dashboard'%}" class="bg-amber-400 p-4 rounded-xl text-xl">Clinician</a>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "core/base.html" %} 
+
+{% block title %}Patient dashboard{% endblock %} 
+
+{% block content %}
+
+
+<div class="flex justify-between items-center px-8 py-4 bg-purple-800">
+  <h1 class="text-3xl text-white">Patient Dashboard</h1>
+  {%if not request.user.is_verified_clinician%}
+  <form action="{% url 'clinicians:verification' %}" method="post" class="inline cursor-pointer">
+    {% csrf_token %}
+    <button
+      type="submit"
+      class="cursor-pointer px-4 py-1 bg-amber-500 text-white text-xl rounded-lg font-semibold">
+      Request Clinician Verification
+    </button>
+  </form>
+  {%endif%}
+</div>
+
+<h1 class="px-8 py-4 text-3xl">Welcome {{request.user.username}}</h1>
+
+
+
+
+{% endblock %}

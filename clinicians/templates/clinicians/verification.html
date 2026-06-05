@@ -1,0 +1,17 @@
+{% extends "core/base.html" %} 
+
+{% block title %}Clinician verification{% endblock %} 
+
+{% block content %}
+
+<h1 class="bg-purple-800 p-4 text-3xl text-white">Clinician Verification</h1>
+<div class="p-6 bg-gray-200">
+    <p class="text-2xl mb-4">Pls, submit your credentials for verification</p>
+    <form action="{% url 'clinicians:verification' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button name="submit">submit</button>
+    </form>
+</div>
+
+{% endblock %}
